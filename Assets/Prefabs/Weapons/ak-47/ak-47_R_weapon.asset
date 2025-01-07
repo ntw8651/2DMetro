@@ -19,9 +19,9 @@ MonoBehaviour:
   weaponSprite: {fileID: 21300000, guid: c9ef79ba59db38f40bd698e29162563d, type: 3}
   canContinue: 1
   reloadTime: 2
-  firerate: 0.2
+  firerate: 0.1
   bulletStack: 1
-  bulletSpreadAngle: 5
+  bulletSpreadAngle: 2
   armDistance: 1
   fireSound: {fileID: 8300000, guid: b3877e76dbbbc234e829ab5a8f7f1b9a, type: 3}
   clickSound: {fileID: 8300000, guid: 13bdecc632bf1a443a280f0ffc4c7330, type: 3}

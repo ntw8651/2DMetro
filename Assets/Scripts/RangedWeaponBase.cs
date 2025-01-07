@@ -35,7 +35,10 @@ public class RangedWeaponBase : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        stat = Instantiate(statSource);
+        if (stat == null)
+        {
+            stat = Instantiate(statSource);
+        }
     }
 
 
@@ -102,7 +105,7 @@ public class RangedWeaponBase : MonoBehaviour
         bulletAngle = Mathf.Atan2(mousePosition.y - muzzlePosition.y, mousePosition.x - muzzlePosition.x) * Mathf.Rad2Deg;
         // GetAngular();
         //bulletAngle = transform.rotation.eulerAngles.z; //* transform.parent.transform.localScale.x;
-        //bulletAngle = Random.Range(-stat.bulletSpreadAngle, stat.bulletSpreadAngle) + bulletAngle;
+        bulletAngle = Random.Range(-stat.bulletSpreadAngle, stat.bulletSpreadAngle) + bulletAngle;
         
         Vector3 direction = new Vector3(Mathf.Cos(bulletAngle * Mathf.Deg2Rad), Mathf.Sin(bulletAngle * Mathf.Deg2Rad), 0);
         hit = Physics2D.Raycast(muzzlePosition, direction, stat.range, ~itemLayermask); 
@@ -118,7 +121,7 @@ public class RangedWeaponBase : MonoBehaviour
             {
                 trajectLine.SetPosition(0, muzzlePosition);
                 trajectLine.SetPosition(1, hit.point);
-                Debug.Log("asdf!");
+                
                 /*
                 if(hit.transform.CompareTag("Enemy") || hit.transform.CompareTag("Player") || hit.transform.CompareTag("파괴가능오브젝트")) {
                     hit.transform.gameObject.GetComponent<DamagedCharacter>().Hit(stat.damage, null, hit.point);

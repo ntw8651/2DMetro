@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class Item : ScriptableObject
 {
-    //¾ÆÀÌÅÛ º¯¼öÀÇ ±âÁØÀº ¹Ù´Ú¿¡ ¶³¾îÁ® ÀÖ´Â »óÅÂ¸¦ ±âÁØÀ¸·Î.
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù´Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
     public string displayName;
-
+    public int id;
+    
     public Sprite displaySprite; // inventory show simply small image
     public GameObject prefab; // throwable having collision Object
     
@@ -16,7 +17,7 @@ public class Item : ScriptableObject
     public bool isEquipped = false;
     public bool isDropped = true;
 
-    //¤»¤»¤»¤»¤»ÀÌ°Å ¾î¶² ¾ÆÀÌÅÛÀÌµç µé¾îµµ µÇ°Ô ÇØµÎ°í ¸¸¾à ³ªÁß¿¡ µå·³Åë °°Àº °Å µé¸é ÃÑÀÌ¶óµµ ¸ÂÀ¸¸é Æã~ÇØ¹ö¸®´Â °³²ÜÀë »óÈ² °¡´ÉÇÏÁö ¾ÊÀ»±î
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½îµµ ï¿½Ç°ï¿½ ï¿½ØµÎ°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½å·³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½~ï¿½Ø¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public enum Type
     {
         MeleeWeapon, // left click
